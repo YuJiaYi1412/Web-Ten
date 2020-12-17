@@ -611,19 +611,14 @@
 		}
 		fun();
 		setInterval(fun,1000);
+	    	//回到顶部
 		top.onclick=function(){
 			var odiv = document.getElementById("top");
-			//将滚动距离设置为0，兼容性写法
 			document.documentElement.scrollTop = document.body.scrollTop = 0;
 		}
-
 		window.onscroll = function(){
 			var odiv = document.getElementById("top");
-			
-			//获取垂直滚动条的滚动距离，兼容性写法
-			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-			
-			
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;	
 			if(scrollTop > 500){	
 				odiv.style.display = "block";
 			} else {
